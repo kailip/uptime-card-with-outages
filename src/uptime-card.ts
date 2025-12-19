@@ -42,8 +42,8 @@ console.info(`%c uptime-card \n   ${CARD_VERSION}    `, 'color: white; backgroun
 // This puts your card into the UI card picker dialog
 (window as any).customCards = (window as any).customCards || [];
 (window as any).customCards.push({
-  type: 'uptime-card',
-  name: 'Uptime Card',
+  type: 'uptime-card-with-outages',
+  name: 'Uptime Card (with outages)',
   description: 'The uptime card show you the history of your binary sensors in a cool way.',
 });
 
