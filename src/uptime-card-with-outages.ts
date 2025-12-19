@@ -50,7 +50,7 @@ console.info(`%c uptime-card \n   ${CARD_VERSION}    `, 'color: white; backgroun
 @customElement('uptime-card-with-outages')
 export class UptimeCard extends LitElement {
   public static async getConfigElement(): Promise<LovelaceCardEditor> {
-    return document.createElement('uptime-card-editor');
+    return document.createElement('uptime-card-with-outages-editor');
   }
 
   public static getStubConfig(): object {
