@@ -47,7 +47,7 @@ console.info(`%c uptime-card \n   ${CARD_VERSION}    `, 'color: white; backgroun
   description: 'The uptime card show you the history of your binary sensors in a cool way.',
 });
 
-@customElement('uptime-card')
+@customElement('uptime-card-with-outages')
 export class UptimeCard extends LitElement {
   public static async getConfigElement(): Promise<LovelaceCardEditor> {
     return document.createElement('uptime-card-editor');
