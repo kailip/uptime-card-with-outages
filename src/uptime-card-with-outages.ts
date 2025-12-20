@@ -195,7 +195,9 @@ export class UptimeCard extends LitElement {
     const points = fetchEverything ? fetchedPoints : [...data.points, ...fetchedPoints];
     const index = points.findIndex(point => point.x > this.getMinimumDate());
     const usefulPoints = index == 0 ? points : points.slice(index - 1);
+    console.log('usefulPoints', JSON.stringify(usefulPoints));
     const cleanedPoints = this.cleanPoints(usefulPoints);
+    console.log('cleanedPoints', JSON.stringify(cleanedPoints));
 
     if (cleanedPoints.length > 0) {
       cache = {
