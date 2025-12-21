@@ -421,7 +421,7 @@ export class UptimeCard extends LitElement {
         lastPointState = fakePoint.y;
         lastPointTime = fakePoint.x;
       }
-      if (lastPointState != pointState) {
+      if (lastPointState != pointState || point.z) {
         cleanedPoints.push({ x: point.x, y: pointState, z: true });
       }
       lastPointState = pointState;
