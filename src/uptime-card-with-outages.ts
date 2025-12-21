@@ -251,7 +251,6 @@ export class UptimeCard extends LitElement {
    * @param state The current state of the entity.
    */
   private isOk(state?: string): boolean | undefined {
-    console.log('Calling isOk', state);
     const { ok, ko, entity, none } = this.config;
 
     if (state == undefined) return undefined;
@@ -423,9 +422,9 @@ export class UptimeCard extends LitElement {
       }
       if (lastPointState != 'on') {
         cleanedPoints.push({ x: point.x, y: 'on' });
-        lastPointState = 'on';
-        lastPointTime = point.x;
       }
+      lastPointState = 'on';
+      lastPointTime = point.x;
     }
     return cleanedPoints;
   }
