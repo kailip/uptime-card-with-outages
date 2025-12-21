@@ -414,16 +414,17 @@ export class UptimeCard extends LitElement {
     let lastPointState: string | undefined = undefined;
     let lastPointTime: number | undefined = undefined;
     for (const point of points) {
+      let pointState = point.y == 'off' ? 'off' : 'on';
       if (lastPointTime && !point.z && point.x - lastPointTime > OUTAGE_INTERVAL) {
         const fakePoint = { x: lastPointTime + OUTAGE_INTERVAL, y: 'off', z: true };
         cleanedPoints.push(fakePoint);
         lastPointState = fakePoint.y;
         lastPointTime = fakePoint.x;
       }
-      if (lastPointState != 'on') {
-        cleanedPoints.push({ x: point.x, y: 'on', z: true });
+      if (lastPointState != pointState) {
+        cleanedPoints.push({ x: point.x, y: pointState, z: true });
       }
-      lastPointState = 'on';
+      lastPointState = pointState;
       lastPointTime = point.x;
     }
     return cleanedPoints;
